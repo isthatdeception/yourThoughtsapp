@@ -27,7 +27,8 @@ const resolvers = require('./graphql/resolvers');
 
 const server = new ApolloServer({
     typeDefs,
-    resolvers
+    resolvers,
+    context: ({req}) => ({req})
 });
 
 // connecting the database and starting the server
